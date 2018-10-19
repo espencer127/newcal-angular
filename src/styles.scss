@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@media only screen and (max-width:450px){
+    h1 {
+        font-size:24px;
+    }
+    h2 {
+        font-size:20px;
+    }
+    h3 {
+        font-size:20px;
+    }
+    #clock {
+        font-size:12px;
+    }
+    .btn {
+        font-size:12px;
+    }   
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .container{
+    background-color:white;
+    background: rgba(250,250,250,.7);
+
+  }
+  
+  hr {
+    size:10;
+    border-color:black;
+  }  
+  
+  nav, mat-card {
+    background: black;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    text-align:center;
+  }
+    
+  h1 {
+    text-align: center;
+    font-family: Ubuntu;
+    letter-spacing: 1px;
+  }
+  
+  h3 {
+    text-align:center
+  }
+    
+  .btn {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .stuck-in-the-middle {
+    flex: 1 1 auto;
+  }
