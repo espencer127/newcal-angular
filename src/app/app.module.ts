@@ -7,22 +7,34 @@ import {
   MatButtonModule,
   MatMenuModule,
   MatToolbarModule,
+  MatFormFieldModule,
   MatIconModule,
   MatCardModule,
   MatTableModule
 } from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserComponentComponent } from './user-component/user-component.component';
+import { UserComponent } from './user/user.component';
+import { AppRoutingModule } from './core/app.routing.module';
+import {CustomMaterialModule} from "./core/material.module";
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { MatProgressSpinnerModule } from '@angular/material';
 
+import { routes } from './core/app.routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponentComponent
+    UserComponent,
+    LoginComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
+    MatFormFieldModule,
+    FormsModule,
     HttpClientModule,
     HttpModule,
     MatToolbarModule,
@@ -30,9 +42,11 @@ import { UserComponentComponent } from './user-component/user-component.componen
     MatMenuModule,
     MatIconModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     MatTableModule,
     MatStepperModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CustomMaterialModule,
   ],
 exports: [
   MatToolbarModule,
@@ -41,7 +55,7 @@ exports: [
   MatIconModule,
   MatCardModule,
   MatTableModule,
-  MatStepperModule
+  MatStepperModule,
 ],
   providers: [],
   bootstrap: [AppComponent]
