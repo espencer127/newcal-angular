@@ -31,6 +31,8 @@ export class AppComponent implements OnInit {
   newSummary;
   theName = "Placeholder Name";
 
+  username: String = "";
+
   name: string;
   passcode: string;
 

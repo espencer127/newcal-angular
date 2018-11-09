@@ -4,7 +4,7 @@ const router = express.Router();
 const CAL_ID = "nmoogdmfcnoe16m5l5enuauhvc@group.calendar.google.com";
 
 
-let events;
+var events;
 
 /* GET api listing. */
 router.get('/', (req, res, Data) => {
@@ -199,7 +199,7 @@ router.patch('/', (req, res, Data) => {
 
     var event = {
       "summary": theEdit.summary,
-      "htmlLink": readline.body.htmlLink
+      //"htmlLink": readline.body.htmlLink
     };
 
     //console.log(event)

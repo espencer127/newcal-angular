@@ -1,4 +1,5 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, NgModule, EventEmitter, OnInit } from '@angular/core';
+import { Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventService } from  'src/services/event.service';
 import { HttpModule } from '@angular/http';
@@ -24,7 +25,9 @@ import {
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  inputs: ['username'],
+  outputs: ['username']
 })
 
 @NgModule({
@@ -36,21 +39,30 @@ import {
 
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+
+  public username: String;
+  public password: string;
+  dataChange: EventEmitter<String> = new EventEmitter();
+
+  @Output() eventClicked = new EventEmitter<Event>();
 
 
   constructor(private router : Router) {
   }
+
   
-    username : string
-    password : string
-  
-    login() : void {
-      if(this.username != '' && this.password == '0990'){
-       this.router.navigate(["user"]);
-      }else {
-        alert("Please enter both your name and the super secret passcode!");
-      }
+  ngOnInit(): void {
+    this.dataChange.emit(this.username);
+  }
+
+  login() : void {
+    if(this.username != '' && this.password == '0990'){
+      this.router.navigate(["user", {username: this.username}]);
+    }else {
+      alert("Please enter both your name and the super secret passcode!");
     }
+  }
+
   }
   

@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { MatProgressSpinnerModule } from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { routes } from './core/app.routing.module';
 
@@ -45,6 +46,7 @@ import { routes } from './core/app.routing.module';
     MatProgressSpinnerModule,
     MatTableModule,
     MatStepperModule,
+    NgbModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
   ],
