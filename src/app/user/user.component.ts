@@ -75,8 +75,11 @@ export class UserComponent implements OnInit {
       //assign it to some component member, like
       this.theName = params['username'];
    });
+
     console.log("alright we're starting this thing w user " + this.theName);
+
     //Get the calendar
+    
     this.eventService.getCalendar().subscribe(calendar => {
       this.eventsList = calendar
       console.log("events list should show up here")
@@ -84,11 +87,8 @@ export class UserComponent implements OnInit {
       this.isDataAvailable = true;
       return this.eventsList;
     })
-  
-    
+   
   }
-
-
 
   selectRow(row, stepper: MatStepper) {
     console.log(row);

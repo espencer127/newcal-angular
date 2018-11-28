@@ -12,7 +12,7 @@
       <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>Choose which night you're signing up to staff/shadow:</ng-template>
         <div *ngIf="isDataAvailable">
-          
+
           <div *ngFor="let cut of eventsList; let i=index" (click)="selectRow(i, stepper)">
             <div class="card">
               <div class="card-body">
@@ -27,28 +27,35 @@
       </mat-step>
 
       <mat-step [stepControl]="secondFormGroup">
-        <ng-template matStepLabel>What position?</ng-template>
-        You chose to staff on:<br><br>
-        {{eventsList[theNum].summary}} <br> {{eventsList[theNum].start.dateTime | date}},
-        {{eventsList[theNum].start.dateTime
-        | date: 'shortTime'}} to {{eventsList[theNum].end.dateTime | date: 'shortTime'}}
-        <br><br>
-        What will you be doing?<br><br>
-        <button mat-raised-button color="primary" (click)="addPerson(stepper, 'Staffing')">Staffing</button>
-        <span style="display:inline-block; width: 20px;"></span>
-        <button mat-raised-button color="primary" (click)="addPerson(stepper, 'Shadowing')">Shadowing</button>
+        <div *ngIf="isDataAvailable">
+
+          <ng-template matStepLabel>What position?</ng-template>
+          You chose to staff on:<br><br>
+          {{eventsList[theNum].summary}} <br> {{eventsList[theNum].start.dateTime | date}},
+          {{eventsList[theNum].start.dateTime
+          | date: 'shortTime'}} to {{eventsList[theNum].end.dateTime | date: 'shortTime'}}
+          <br><br>
+          What will you be doing?<br><br>
+          <button mat-raised-button color="primary" (click)="addPerson(stepper, 'Staffing')">Staffing</button>
+          <span style="display:inline-block; width: 20px;"></span>
+          <button mat-raised-button color="primary" (click)="addPerson(stepper, 'Shadowing')">Shadowing</button>
+
+        </div>
       </mat-step>
 
 
       <mat-step [stepControl]="thirdFormGroup">
-        <ng-template matStepLabel>Confirm Your Selection</ng-template>
-        The Calendar Event will now read:<br><br>
+        <div *ngIf="isDataAvailable">
 
-        {{newSummary}} <br><br>
+          <ng-template matStepLabel>Confirm Your Selection</ng-template>
+          The Calendar Event will now read:<br><br>
 
-        <button mat-raised-button color="primary" (click)="pushIt()">Let's Do It!</button>
+          {{newSummary}} <br><br>
 
-        <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+          <button mat-raised-button color="primary" (click)="pushIt()">Let's Do It!</button>
+
+          <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+        </div>
 
       </mat-step>
 

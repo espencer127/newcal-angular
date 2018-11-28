@@ -17,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from './core/app.routing.module';
 import {CustomMaterialModule} from "./core/material.module";
-import { CommonModule } from '@angular/common';
+import { CommonModule, APP_BASE_HREF,LocationStrategy,HashLocationStrategy } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { MatProgressSpinnerModule } from '@angular/material';
@@ -59,7 +59,10 @@ exports: [
   MatTableModule,
   MatStepperModule,
 ],
-  providers: [],
+  providers: [
+    { provide:APP_BASE_HREF, useValue: '/'},
+    { provide: LocationStrategy, useClass:HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
