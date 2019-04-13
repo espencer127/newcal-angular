@@ -6,7 +6,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "http-server ./dist/",
+    "start": "http-server ./dist/ -p $PORT",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
