@@ -17,7 +17,8 @@ export class EventService {
 
   //Get the list of events
   getCalendar(): Observable<Object>{
-    return this.http.get(this.newcalUrl);
+    //return this.http.get(this.newcalUrl);
+    return this.http.get();
   }
 
   patchCalendar(selectedEvent): Observable<Object>{
