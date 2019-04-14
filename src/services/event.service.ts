@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import { Headers, Http, Response } from '@angular/http';
+
 import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -10,19 +11,20 @@ import 'rxjs/add/operator/map';
 
 export class EventService {
 
-  constructor(private http: HttpClient) {   }
+  constructor(private http: HttpClient, public http2:Http) {   }
 
   api_url = `http://localhost:3000`;
+  Newurl = `https://newcal-angular.herokuapp.com/newcal-angular/#/user;username=Evan`;
   newcalUrl = `${this.api_url}/api`;
 
   //Get the list of events
   getCalendar(): Observable<Object>{
     //return this.http.get(this.newcalUrl);
-    return this.http.get();
+    return this.http.get(this.Newurl);
   }
 
   patchCalendar(selectedEvent): Observable<Object>{
-    return this.http.patch(this.newcalUrl, selectedEvent);
+    return this.http.patch(this.Newurl, selectedEvent);
   }
 
 
