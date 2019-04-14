@@ -13,8 +13,9 @@ export class EventService {
 
   constructor(private http: HttpClient, public http2:Http) {   }
 
+  userName = "";
   api_url = `http://localhost:3000`;
-  Newurl = `https://newcal-angular.herokuapp.com/newcal-angular/#/user;username=Evan`;
+  Newurl = `https://newcal-angular.herokuapp.com/#/user;username=${this.userName}`;
   newcalUrl = `${this.api_url}/api`;
 
   //Get the list of events
