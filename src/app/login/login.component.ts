@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit{
 
   login() : void {
     if(this.username != '' && this.password == '0990'){
-      this.router.navigate(["user", {username: this.username}]);
+      this.router.navigate(["user",this.username]);
     }else {
       alert("Please enter both your name and the super secret passcode!");
     }
