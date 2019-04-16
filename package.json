@@ -2,9 +2,9 @@
   "name": "newcal-angular",
   "version": "0.0.0",
   "scripts": {
-    "heroku-prebuild": "ng build",
+    "prestart": "node .",
     "ng": "ng",
-    "start": "http-server ./dist/ | node .",
+    "start": "http-server ./dist/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
