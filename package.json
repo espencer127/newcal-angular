@@ -2,7 +2,7 @@
   "name": "newcal-angular",
   "version": "0.0.0",
   "scripts": {
-    "prestart": "node .",
+    "prestart": "node server",
     "ng": "ng",
     "start": "http-server ./dist/",
     "build": "ng build",
