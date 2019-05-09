@@ -8,7 +8,10 @@ const PORT = process.env.PORT || 3000;
 // Get our API routes
 const api = require('./server/routes/api');
 
-const app = express();
+var cors = require('cors');
+
+var app = express();
+app.use(cors());
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -22,9 +25,10 @@ app.use('/api', api);
 
 
 app.use(function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  
   next();
 });
 
