@@ -13,8 +13,8 @@ export class EventService {
   constructor(private http: HttpClient) {   }
 
   BASEURL = 'http://newcal-angular.herokuapp.com';
-  PORT = 'process.env.PORT || 3000';
-  api_url = `${this.BASEURL}:${this.PORT}`;
+  PORT = process.env.PORT || 3000;
+  api_url = `http://localhost:${this.PORT}`;
   newcalUrl = `${this.api_url}/api`;
 
   //Get the list of events
