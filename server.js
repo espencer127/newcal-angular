@@ -1,7 +1,7 @@
 // Get dependencies
 const express = require('express');
 const path = require('path');
-const http = require('http');
+var http = require('http');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 
