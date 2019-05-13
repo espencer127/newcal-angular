@@ -207,7 +207,7 @@ router.patch('/', (req, res, Data) => {
     console.log("The event id: " + JSON.stringify(theEdit.id))
     calendar.events.patch({
       auth: auth,
-      calendarId: CAL_ID,
+      calendarId: 'primary', //CAL_ID,
       eventId: theEdit.id,
       resource: event,
     }, function (err, event) {
