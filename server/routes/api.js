@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const CAL_ID = "freeride15224@gmail.com";
+//const CAL_ID = "freeride15224@gmail.com";
 
 
 var events;
@@ -85,9 +85,9 @@ router.get('/', (req, res, Data) => {
       const calendar = google.calendar({ version: 'v3', auth });
       calendar.events.list(
         {
-          calendarId: CAL_ID,
+          calendarId: 'primary', //CAL_ID,
           timeMin: (new Date()).toISOString(),
-          maxResults: 10,
+          maxResults: 20,
           singleEvents: true,
           orderBy: 'startTime',
         },
