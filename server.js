@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 var http = require('http');
 const bodyParser = require('body-parser');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Get our API routes
 const api = require('./server/routes/api');
