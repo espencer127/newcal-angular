@@ -108,7 +108,7 @@ export class UserComponent implements OnInit {
    // If this event already have a staffer...
    if ( (currentSummary.includes("-") && !(currentSummary.includes("(")) ) ) {
     (role == "Staffing") ? 
-      this.newSummary = currentSummary + ", " + this.theName :
+      this.newSummary = currentSummary + " - " + this.theName + " (Staffing)" :
       this.newSummary = currentSummary + " - " + this.theName + " (Shadowing)";
    } 
    // If event already has a shadower...
@@ -122,7 +122,7 @@ export class UserComponent implements OnInit {
    // If it doesn't have either...just add to the end
    else {
     (role == "Staffing") ? 
-      this.newSummary = currentSummary + " - " + this.theName :
+      this.newSummary = currentSummary + " - " + this.theName + " (Staffing)":
       this.newSummary = currentSummary + " - " + this.theName + " (Shadowing)";
    }
    stepper.next();
