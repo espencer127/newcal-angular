@@ -13,16 +13,14 @@ export class EventService {
   constructor(private http: HttpClient) {   }
 
 
-  process: {
-    env: {
-        NODE_ENV: string
-    }
- };
+ //This is the config for when hosted on heroku
+  //BASEURL = 'https://newcal-angular.herokuapp.com';
+  //newcalUrl = `${this.BASEURL}/api`;
 
-  BASEURL = 'https://newcal-angular.herokuapp.com';
-  //PORT = process.env.PORT || 3000;
-  //api_url = `http://localhost:${this.PORT}`;
-  newcalUrl = `${this.BASEURL}/api`;
+  //This is the config for when doing it local
+  PORT = 3000;
+  api_url = `http://localhost:${this.PORT}`;
+  newcalUrl = `${this.api_url}/api`;
 
   //Get the list of events
   getCalendar(): Observable<Object>{
